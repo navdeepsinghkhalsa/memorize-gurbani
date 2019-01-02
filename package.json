@@ -4,7 +4,10 @@
   "description": "An app to help memorize Gurbani step by step",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "run-p test:*",
+    "test:lint": "run-p test:lint:*",
+    "test:lint:css": "stylelint 'src/**/*.scss'",
+    "test:lint:js": "eslint src"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,30 @@
   "bugs": {
     "url": "https://github.com/navdeepsinghkhalsa/memorize-gurbani/issues"
   },
-  "homepage": "https://github.com/navdeepsinghkhalsa/memorize-gurbani#readme"
+  "homepage": "https://github.com/navdeepsinghkhalsa/memorize-gurbani#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.4.3",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^2.1.0",
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.1",
+    "jest": "^23.6.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "stylelint": "^9.9.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^2.0.0",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.1.2"
+  }
 }
