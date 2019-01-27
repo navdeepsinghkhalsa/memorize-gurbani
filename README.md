@@ -19,3 +19,7 @@ While only the Shiromani Gurdwara Prabandhak Committee has permission to print f
 
 ### Length
 Throughout the entire *Panth*, *Sangat* chooses or has been given *Hukam* to recite some compiled *Banis* at different lengths. Some more popular ones are available as data becomes available. For the purpose of clarity and avoiding ambiguity, these are labeled as *Jathebandi*/institution names. This is not intented to serve as a point of division.
+
+## Contributing
+### Sevaa Appreciated
+If any graphic designer and/or UX/UI professional can do Sevaa on this app, I would love the help. Please reach out at the email address on my [GitHub profile](https://github.com/navdeepsinghkhalsa) or on Telegram ([@navdeepsingh](https://telegram.me/navdeepsingh)).
