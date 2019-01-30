@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
 
+import Root from './app/Root';
+
 const App = () => (
-  <div>
-    Hello World
-  </div>
+  <Root />
 );
 
 render(<App />, document.getElementById('app'));

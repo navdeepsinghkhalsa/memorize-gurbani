@@ -11,7 +11,7 @@ const BUILD_DIR = path.join(__dirname, 'build');
 
 module.exports = {
   mode: process.env.NODE_ENV || 'production',
-  entry: `${APP_DIR}/index.jsx`,
+  entry: `${APP_DIR}/index.js`,
   output: {
     path: BUILD_DIR,
     filename: '[name].[hash].js',
@@ -61,5 +61,6 @@ module.exports = {
   devServer: {
     contentBase: BUILD_DIR,
     compress: true,
+    historyApiFallback: true,
   },
 };
