@@ -10,6 +10,7 @@ import routes from './routes';
 const styles = {
   root: {
     bottom: 0,
+    left: 0,
     position: 'fixed',
     width: '100%',
   },

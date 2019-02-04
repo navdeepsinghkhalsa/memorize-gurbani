@@ -4,9 +4,9 @@ import GurbaniIcon from '@material-ui/icons/WbSunnyOutlined';
 import SettingsIcon from '@material-ui/icons/Settings';
 import AboutIcon from '@material-ui/icons/Info';
 // Components
-import Home from '../modules/Home/Home';
-import Settings from '../modules/Settings/Settings';
-import About from '../modules/About/About';
+import Home from '../routes/Home/Home';
+import Settings from '../routes/Settings/Settings';
+import About from '../routes/About/About';
 
 const routes = [
   {
