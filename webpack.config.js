@@ -1,8 +1,8 @@
-const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const postcssPresetEnv = require('postcss-preset-env');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -20,12 +20,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?/,
+        test: /\.js$/,
         include: APP_DIR,
         use: 'babel-loader',
       },
       {
-        test: /\.s?css$/,
+        test: /\.css$/,
         use: [
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
@@ -40,12 +40,11 @@ module.exports = {
             options: {
               ident: 'postcss',
               plugins: () => [
-                autoprefixer(),
+                postcssPresetEnv({ stage: 0 }),
                 cssnano(),
               ],
             },
           },
-          'sass-loader',
         ],
       },
     ],
