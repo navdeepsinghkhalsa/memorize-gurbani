@@ -1,5 +1,5 @@
 # memorize-gurbani
-[![Build Status](https://travis-ci.org/navdeepsinghkhalsa/memorize-gurbani.svg?branch=master)](https://travis-ci.org/navdeepsinghkhalsa/memorize-gurbani)
+[![Build Status](https://travis-ci.org/navdeepsinghkhalsa/memorize-gurbani.svg?branch=master)](https://travis-ci.org/navdeepsinghkhalsa/memorize-gurbani) [![Netlify Status](https://api.netlify.com/api/v1/badges/51bc7489-dbc8-46e1-8df7-29cf8c10c76f/deploy-status)](https://app.netlify.com/sites/memorizegurbani/deploys)
 
 An app to help memorize, understand, and internalize *Nitnem* (the Sikh daily prayers) and more *Gurbani*
 
@@ -26,6 +26,7 @@ If any graphic designer and/or UX/UI professional can do Sevaa on this app, I wo
 
 ## Acknowledgements
 ### BaniDB
+[<img height="50" src="http://www.banidb.com/wp-content/uploads/2018/03/full-banidb-logo.png" align="right">](https://www.banidb.com)
 The database used is provided by the BaniDB Alliance and is subject to the Khalis Non-Commercial Gurbani Software License 1.0
 
 ### Gurmukhi Fonts
