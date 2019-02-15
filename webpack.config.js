@@ -47,6 +47,12 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(ttf|eot|svg|woff(2)?)$/,
+        use: [
+          'file-loader?name=fonts/[name].[ext]',
+        ],
+      },
     ],
   },
   plugins: [

@@ -23,3 +23,10 @@ Throughout the entire *Panth*, *Sangat* chooses or has been given *Hukam* to rec
 ## Contributing
 ### Sevaa Appreciated
 If any graphic designer and/or UX/UI professional can do Sevaa on this app, I would love the help. Please reach out at the email address on my [GitHub profile](https://github.com/navdeepsinghkhalsa) or on Telegram ([@navdeepsingh](https://telegram.me/navdeepsingh)).
+
+## Acknowledgements
+### BaniDB
+The database used is provided by the BaniDB Alliance and is subject to the Khalis Non-Commercial Gurbani Software License 1.0
+
+### Gurmukhi Fonts
+The fonts used are provided by Khalis Foundation and subject to multiple licenses. Please see the [GitHub repository](https://github.com/KhalisFoundation/gurmukhi-fonts).

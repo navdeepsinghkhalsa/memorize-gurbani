@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography';
 const styles = {
   root: {
     'font-weight': 100,
-    'margin-top': '56px',
     'text-align': 'center',
   },
 };

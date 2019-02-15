@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'AnmolLipiTrue';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/AnmolLipiTrue.eot');
+  src:
+    url('./assets/fonts/AnmolLipiTrue.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/AnmolLipiTrue.svg#AnmolLipiTrue') format('svg'),
+    url('./assets/fonts/AnmolLipiTrue.woff') format('woff'),
+    url('./assets/fonts/AnmolLipiTrue.woff2') format('woff2');
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,6 +19,10 @@ body {
   padding: 0;
 }
 
-:root #app {
+:global #app {
   padding: 5% 5% 56px;
+}
+
+:global .gurmukhi {
+  font-family: AnmolLipiTrue, sans-serif;
 }

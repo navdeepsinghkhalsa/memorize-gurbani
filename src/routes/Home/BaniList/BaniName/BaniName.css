@@ -1,0 +1,8 @@
+.baniName {
+  border: 1px solid #222;
+  border-radius: 15px;
+  color: #333;
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+}
