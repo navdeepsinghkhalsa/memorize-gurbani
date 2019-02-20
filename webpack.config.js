@@ -11,7 +11,7 @@ const BUILD_DIR = path.join(__dirname, 'build');
 
 module.exports = {
   mode: process.env.NODE_ENV || 'production',
-  entry: `${APP_DIR}/index.js`,
+  entry: ['@babel/polyfill', `${APP_DIR}/index.js`],
   output: {
     path: BUILD_DIR,
     filename: '[name].[hash].js',
