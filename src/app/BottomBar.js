@@ -43,15 +43,17 @@ class SimpleBottomNavigation extends React.Component {
         showLabels
         className={classes.root}
       >
-        {routes.map(route => (
-          <BottomNavigationAction
-            key={route.id}
-            component={Link}
-            to={route.path}
-            icon={route.nav.icon}
-            label={route.nav.label}
-          />
-        ))}
+        {routes
+          .filter(item => 'nav' in item)
+          .map(route => (
+            <BottomNavigationAction
+              key={route.id}
+              component={Link}
+              to={route.path}
+              icon={route.nav.icon}
+              label={route.nav.label}
+            />
+          ))}
       </BottomNavigation>
     );
   }
