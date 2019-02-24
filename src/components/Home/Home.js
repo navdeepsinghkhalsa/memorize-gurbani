@@ -1,6 +1,6 @@
 import React from 'react';
 // Components
-import TitleBar from '../../modules/TitleBar';
+import TitleBar from '../TitleBar';
 import BaniList from './BaniList/BaniList';
 
 const Home = () => (

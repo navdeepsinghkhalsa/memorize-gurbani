@@ -24,5 +24,5 @@ body {
 }
 
 :global .gurmukhi {
-  font-family: AnmolLipiTrue, sans-serif;
+  font-family: AnmolLipiTrue, sans-serif !important;
 }

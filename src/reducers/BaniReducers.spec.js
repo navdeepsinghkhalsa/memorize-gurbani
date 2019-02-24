@@ -1,5 +1,5 @@
-import { banis } from './BaniListReducers';
-import { UPDATE_BANIS_LIST } from './BaniListActions';
+import { banis } from './BaniReducers';
+import { UPDATE_BANIS_LIST } from '../actions/BaniActions';
 
 describe('sets the list of Banis', () => {
   const stateBefore = [];

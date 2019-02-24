@@ -10,7 +10,7 @@ import { supportedBanis } from '../../../app/config';
 import BaniName from './BaniName/BaniName';
 
 // Actions
-import { fetchBanisListAction } from './BaniListActions';
+import { fetchBanisListAction } from '../../../actions/BaniActions';
 
 // Styles
 import styles from './BaniList.css';

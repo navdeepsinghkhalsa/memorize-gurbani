@@ -4,9 +4,11 @@ import GurbaniIcon from '@material-ui/icons/WbSunnyOutlined';
 import SettingsIcon from '@material-ui/icons/Settings';
 import AboutIcon from '@material-ui/icons/Info';
 // Components
-import Home from '../routes/Home/Home';
-import Settings from '../routes/Settings/Settings';
-import About from '../routes/About/About';
+import Home from '../components/Home/Home';
+import Settings from '../components/Settings/Settings';
+import About from '../components/About/About';
+// Training
+import PauriOrder from '../components/Training/PauriOrder/PauriOrder';
 
 const routes = [
   {
@@ -41,6 +43,13 @@ const routes = [
     },
     route: {
       component: About,
+    },
+  },
+  {
+    id: 'pauri-order',
+    path: '/pauri-order/:bani',
+    route: {
+      component: PauriOrder,
     },
   },
 ];

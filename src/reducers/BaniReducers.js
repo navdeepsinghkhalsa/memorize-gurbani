@@ -1,5 +1,4 @@
-/* eslint-disable import/prefer-default-export */
-import { UPDATE_BANIS_LIST } from './BaniListActions';
+import { UPDATE_BANIS_LIST } from '../actions/BaniActions';
 
 export const banis = (state = [], { type, payload }) => {
   switch (type) {

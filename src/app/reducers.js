@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 import {
   banis,
-} from '../routes/Home/BaniList/BaniListReducers';
+} from '../reducers/BaniReducers';
 
 export default combineReducers({
   banis,

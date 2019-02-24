@@ -1,6 +1,6 @@
 import React from 'react';
 // Components
-import TitleBar from '../../modules/TitleBar';
+import TitleBar from '../TitleBar';
 
 const Settings = () => (
   <React.Fragment>
