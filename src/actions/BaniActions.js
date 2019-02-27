@@ -13,15 +13,16 @@ export const fetchBanisListAction = () => async (dispatch) => {
 };
 
 export const ADD_BANI = 'ADD_BANI';
-const receiveBani = bani => ({
+const receiveBani = (baniID, gurbani) => ({
   type: ADD_BANI,
   payload: {
-    bani,
+    baniID,
+    gurbani,
   },
 });
 
 export const fetchBaniAction = baniID => async (dispatch) => {
   const response = await fetch(`https://api.banidb.com/v2/banis/${baniID}`);
-  const bani = await response.json();
-  dispatch(receiveBani(bani));
+  const gurbani = await response.json();
+  dispatch(receiveBani(baniID, gurbani));
 };
