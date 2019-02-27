@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 // Components
 import BaniTitle from '../../BaniTitle';
+// Utils
+import getSections from '../../../utils/getSections';
 
 // Actions
 import { fetchBaniAction } from '../../../actions/BaniActions';
@@ -16,11 +18,22 @@ const PauriOrder = ({ banis, match, fetchBani }) => {
       fetchBani(bani.ID);
     }
   });
+  const sections = getSections(bani);
   return (
     <React.Fragment>
       <BaniTitle text={bani.gurmukhi} />
-      Hello,
-      {bani.gurmukhiUni}
+      <div className="gurmukhi">
+        {Object.keys(sections).map(sectionID => (
+          <div key={`section${sectionID}`} style={{ marginBottom: '15px' }}>
+            {sections[sectionID].map((verse, index) => (
+              <React.Fragment key={`line${index}`}>
+                {verse}
+                {' '}
+              </React.Fragment>
+            ))}
+          </div>
+        ))}
+      </div>
     </React.Fragment>
   );
 };
