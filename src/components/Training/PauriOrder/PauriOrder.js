@@ -41,15 +41,15 @@ const PauriOrder = ({
       fetchBani(bani.ID);
     }
   });
-  const sections = getSections(bani);
-  const { correctArray, nextID, nextOptions } = splitCorrect(sections, correct);
+  const sections = bani.gurbani ? getSections(bani) : [];
+  const { correctArray, nextID, nextOptions } = bani.gurbani ? splitCorrect(sections, correct) : {};
 
   return (
     <React.Fragment>
       <BaniTitle text={bani.gurmukhi} />
       <div className="gurmukhi">
         <Paper className={[classes.section, classes.sectionPaper].join(' ')}>
-          {correctArray.map(sectionID => (
+          {bani.gurbani && correctArray.map(sectionID => (
             <div key={`section${sectionID}`} className={classes.section}>
               {sections[sectionID].map((verse, index) => (
                 <React.Fragment key={`line${index}`}>
@@ -61,7 +61,7 @@ const PauriOrder = ({
           ))}
         </Paper>
         <Grid container spacing={24}>
-          {nextOptions.map(sectionID => (
+          {bani.gurbani && nextOptions.map(sectionID => (
             <Grid key={`section${sectionID}`} item xs={12} sm={4}>
               <Paper onClick={() => { if (sectionID === nextID) { setCorrect(nextID); } }} className={[classes.option, classes.sectionPaper].join(' ')}>
                 {sections[sectionID][0]}
