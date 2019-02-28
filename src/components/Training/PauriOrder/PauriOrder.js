@@ -24,6 +24,7 @@ const styles = {
     padding: '10px',
   },
   section: {
+    'line-height': '1.5',
     'margin-bottom': '15px',
   },
 };
