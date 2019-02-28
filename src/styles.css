@@ -20,7 +20,7 @@ body {
 }
 
 :global #app {
-  padding: 5% 5% 56px;
+  padding: 5% 5% calc(56px + 10px);
 }
 
 :global .gurmukhi {
