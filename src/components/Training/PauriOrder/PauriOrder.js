@@ -7,6 +7,8 @@ import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/styles';
 // Components
 import BaniTitle from '../../BaniTitle';
+// Config
+import { supportedBanis } from '../../../app/config';
 // Utils
 import getSections from '../../../utils/getSections';
 import splitCorrect from '../../../utils/splitCorrect';
@@ -33,6 +35,7 @@ const PauriOrder = ({
   match,
 }) => {
   const baniToken = match.params.bani;
+  const { sectionLinesToShow } = supportedBanis[baniToken];
   const bani = banis.find(oneBani => oneBani.token === baniToken);
   const initialState = 0;
   const [correct, setCorrect] = useState(initialState);
@@ -64,7 +67,7 @@ const PauriOrder = ({
           {bani.gurbani && nextOptions.map(sectionID => (
             <Grid key={`section${sectionID}`} item xs={12} sm={4}>
               <Paper onClick={() => { if (sectionID === nextID) { setCorrect(nextID); } }} className={[classes.option, classes.sectionPaper].join(' ')}>
-                {sections[sectionID][0]}
+                {sections[sectionID].filter((val, index) => index <= sectionLinesToShow - 1).join(' ')}
                 {' '}
               </Paper>
             </Grid>

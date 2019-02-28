@@ -6,7 +6,7 @@ const getSections = (bani) => {
   const sections = {};
   let sectionIndex;
   let [nextSectionID] = iterateSectionIDs.splice(0, 1);
-  bani.gurbani.verses.forEach((verse, index) => {
+  bani.gurbani.verses.filter(verse => verse.mangalPosition === 'current' || verse.mangalPosition === null).forEach((verse, index) => {
     if (nextSectionID === index) {
       if (sectionIndex === undefined) {
         sectionIndex = 0;
