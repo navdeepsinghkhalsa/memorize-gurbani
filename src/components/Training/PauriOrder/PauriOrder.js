@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/styles';
 // Components
 import BaniTitle from '../../BaniTitle';
@@ -58,30 +59,37 @@ const PauriOrder = ({
   return (
     <React.Fragment>
       <BaniTitle text={bani.gurmukhi} />
-      <div className="gurmukhi">
-        <Paper className={[classes.section, classes.sectionPaper].join(' ')}>
-          {bani.gurbani && correctArray.map(sectionID => (
-            <div key={`section${sectionID}`} className={classes.section}>
-              {sections[sectionID].map((verse, index) => (
-                <React.Fragment key={`line${index}`}>
-                  {verse}
+      {bani.gurbani && (
+        <div className="gurmukhi">
+          <Paper className={[classes.section, classes.sectionPaper].join(' ')}>
+            {correctArray.map(sectionID => (
+              <div key={`section${sectionID}`} className={classes.section}>
+                {sections[sectionID].map((verse, index) => (
+                  <React.Fragment key={`line${index}`}>
+                    {verse}
+                    {' '}
+                  </React.Fragment>
+                ))}
+              </div>
+            ))}
+          </Paper>
+          {correctArray.length <= 3 && (
+            <Typography variant="body1" gutterBottom>
+              Please choose the next correct Pankti to advance.
+            </Typography>
+          )}
+          <Grid container spacing={24}>
+            {nextOptions.map(sectionID => (
+              <Grid key={`section${sectionID}`} item xs={12} sm={4}>
+                <Paper onClick={() => { if (sectionID === nextID) { setCorrect(nextID); } }} className={[classes.option, classes.sectionPaper].join(' ')}>
+                  {sections[sectionID].filter((val, index) => index <= sectionLinesToShow - 1).join(' ')}
                   {' '}
-                </React.Fragment>
-              ))}
-            </div>
-          ))}
-        </Paper>
-        <Grid container spacing={24}>
-          {bani.gurbani && nextOptions.map(sectionID => (
-            <Grid key={`section${sectionID}`} item xs={12} sm={4}>
-              <Paper onClick={() => { if (sectionID === nextID) { setCorrect(nextID); } }} className={[classes.option, classes.sectionPaper].join(' ')}>
-                {sections[sectionID].filter((val, index) => index <= sectionLinesToShow - 1).join(' ')}
-                {' '}
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
-      </div>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        </div>
+      )}
     </React.Fragment>
   );
 };
