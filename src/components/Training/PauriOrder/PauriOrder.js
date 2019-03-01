@@ -47,7 +47,7 @@ const PauriOrder = ({
     }
   });
   useEffect(() => {
-    const $correctSections = document.querySelectorAll('[class^="PauriOrder-section"]');
+    const $correctSections = document.querySelectorAll('.correctSection');
     if ($correctSections.length > 1) {
       const $lastCorrectSection = $correctSections[$correctSections.length - 1];
       requestAnimationFrame(() => window.scrollTo(0, $lastCorrectSection.offsetTop - 5));
@@ -63,7 +63,7 @@ const PauriOrder = ({
         <div className="gurmukhi">
           <Paper className={[classes.section, classes.sectionPaper].join(' ')}>
             {correctArray.map(sectionID => (
-              <div key={`section${sectionID}`} className={classes.section}>
+              <div key={`section${sectionID}`} className={`correctSection ${classes.section}`}>
                 {sections[sectionID].map((verse, index) => (
                   <React.Fragment key={`line${index}`}>
                     {verse}
