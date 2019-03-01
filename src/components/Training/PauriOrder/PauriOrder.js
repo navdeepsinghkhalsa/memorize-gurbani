@@ -45,6 +45,13 @@ const PauriOrder = ({
       fetchBani(bani.ID);
     }
   });
+  useEffect(() => {
+    const $correctSections = document.querySelectorAll('[class^="PauriOrder-section"]');
+    if ($correctSections.length > 1) {
+      const $lastCorrectSection = $correctSections[$correctSections.length - 1];
+      requestAnimationFrame(() => window.scrollTo(0, $lastCorrectSection.offsetTop - 5));
+    }
+  });
   const sections = bani.gurbani ? getSections(bani) : [];
   const { correctArray, nextID, nextOptions } = bani.gurbani ? splitCorrect(sections, correct) : {};
 
