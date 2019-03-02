@@ -50,7 +50,7 @@ const PauriOrder = ({
     const $correctSections = document.querySelectorAll('.correctSection');
     if ($correctSections.length > 1) {
       const $lastCorrectSection = $correctSections[$correctSections.length - 1];
-      requestAnimationFrame(() => window.scrollTo(0, $lastCorrectSection.offsetTop - 5));
+      requestAnimationFrame(() => window.scrollTo({ left: 0, top: $lastCorrectSection.offsetTop - 5, behavior: 'smooth' }));
     }
   });
   const sections = bani.gurbani ? getSections(bani) : [];

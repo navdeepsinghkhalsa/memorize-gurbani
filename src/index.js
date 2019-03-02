@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { Provider } from 'react-redux';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import configureStore from './app/configureStore';
 
@@ -12,6 +13,7 @@ import site from './app/reducers';
 import './styles.css';
 
 const store = configureStore(site);
+smoothscroll.polyfill();
 
 const theme = createMuiTheme({
   typography: {
