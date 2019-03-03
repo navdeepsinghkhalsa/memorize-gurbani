@@ -1,13 +1,15 @@
 @font-face {
-  font-family: 'AnmolLipiTrue';
+  font-family: 'GurbaniAkharTrue';
   font-style: normal;
   font-weight: normal;
-  src: url('./assets/fonts/AnmolLipiTrue.eot');
+  src: url('./assets/fonts/GurbaniAkharTrue.eot');
   src:
-    url('./assets/fonts/AnmolLipiTrue.eot?#iefix') format('embedded-opentype'),
-    url('./assets/fonts/AnmolLipiTrue.svg#AnmolLipiTrue') format('svg'),
-    url('./assets/fonts/AnmolLipiTrue.woff') format('woff'),
-    url('./assets/fonts/AnmolLipiTrue.woff2') format('woff2');
+    local('☺'),
+    url('./assets/fonts/GurbaniAkharTrue.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/GurbaniAkharTrue.woff2') format('woff2'),
+    url('./assets/fonts/GurbaniAkharTrue.woff') format('woff'),
+    url('./assets/fonts/GurbaniAkharTrue.svg') format('svg'),
+    url('./assets/fonts/GurbaniAkharTrue.ttf') format('truetype');
 }
 
 * {
@@ -29,5 +31,5 @@ body {
 }
 
 :global .gurmukhi {
-  font-family: AnmolLipiTrue, sans-serif !important;
+  font-family: GurbaniAkharTrue, sans-serif !important;
 }
