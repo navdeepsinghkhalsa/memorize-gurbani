@@ -37,7 +37,7 @@ const PauriOrder = ({
   match,
 }) => {
   const baniToken = match.params.bani;
-  const { sectionLinesToShow } = supportedBanis[baniToken];
+  const { sectionLinesToShow } = supportedBanis.sectionOrder[baniToken];
   const bani = banis.find(oneBani => oneBani.token === baniToken);
   const initialState = 0;
   const [correct, setCorrect] = useState(initialState);

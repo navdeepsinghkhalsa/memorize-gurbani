@@ -7,6 +7,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
+import { supportedBanis } from '../../../../app/config';
+
 // Styles
 import styles from './BaniName.css';
 
@@ -18,11 +20,15 @@ const BaniName = ({ bani }) => (
       </Typography>
     </CardContent>
     <CardActions>
-      <Link to={`/pauri-order/${bani.token}`}>
-        <Button>
-          Pauri Order
-        </Button>
-      </Link>
+      {
+        supportedBanis.sectionOrder[bani.token] && (
+          <Link to={`/pauri-order/${bani.token}`}>
+            <Button>
+              Pauri Order
+            </Button>
+          </Link>
+        )
+      }
     </CardActions>
   </Card>
 );

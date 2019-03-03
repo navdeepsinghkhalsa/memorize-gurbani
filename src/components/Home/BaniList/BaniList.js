@@ -24,9 +24,12 @@ const BaniList = ({
       fetchBanisList();
     }
   });
+  // Only show those Banis that have support in at least one type of training
   return (
     <div className={styles.banis}>
-      {banis.map(bani => supportedBanis[bani.token] && <BaniName key={bani.token} bani={bani} />)}
+      {banis.map(bani => Object.keys(supportedBanis)
+        .some(trainingType => supportedBanis[trainingType][bani.token])
+        && <BaniName key={bani.token} bani={bani} />)}
     </div>
   );
 };
