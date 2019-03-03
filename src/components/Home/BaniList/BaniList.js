@@ -25,7 +25,7 @@ const BaniList = ({
     }
   });
   return (
-    <div className={`${styles.banis} gurmukhi`}>
+    <div className={styles.banis}>
       {banis.map(bani => supportedBanis[bani.token] && <BaniName key={bani.token} bani={bani} />)}
     </div>
   );
