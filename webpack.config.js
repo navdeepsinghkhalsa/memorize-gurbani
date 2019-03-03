@@ -49,6 +49,13 @@ module.exports = {
         ],
       },
       {
+        test: /\.md$/,
+        use: [
+          'html-loader',
+          'markdown-loader',
+        ],
+      },
+      {
         test: /\.(ttf|eot|svg|woff(2)?)$/,
         use: [
           'file-loader?name=fonts/[name].[ext]',
