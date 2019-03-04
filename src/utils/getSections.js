@@ -1,7 +1,7 @@
 import { supportedBanis } from '../app/config';
 
 const getSections = (bani) => {
-  const { sectionIDs } = supportedBanis[bani.token];
+  const { sectionIDs } = supportedBanis.sectionOrder[bani.token];
   const iterateSectionIDs = [...sectionIDs];
   const sections = {};
   let sectionIndex;
