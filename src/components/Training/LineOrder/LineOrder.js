@@ -39,7 +39,7 @@ const LineOrder = ({
   const baniToken = match.params.bani;
   const bani = banis.find(oneBani => oneBani.token === baniToken);
   const { duplicates } = supportedBanis.lineOrder[baniToken];
-  const initialState = 44;
+  const initialState = 0;
   const [correct, setCorrect] = useState(initialState);
   useEffect(() => {
     if (!bani.gurbani) {
