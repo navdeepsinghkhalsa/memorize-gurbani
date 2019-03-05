@@ -7,7 +7,7 @@ const shuffle = (a) => {
   return b;
 };
 
-const splitCorrect = (sections, correct) => {
+const splitCorrect = (sections, correct, avoid = {}) => {
   const sectionIDs = Object.keys(sections);
   const remaining = sectionIDs.filter(sectionID => sectionID > correct);
   let nextID;
@@ -16,6 +16,9 @@ const splitCorrect = (sections, correct) => {
     ([nextID] = remaining.splice(0, 1));
     nextID = parseInt(nextID, 10);
     nextOptions.push(nextID);
+  }
+  if (avoid[nextID]) {
+    avoid[nextID].forEach(index => delete remaining[remaining.indexOf(index.toString())]);
   }
   if (remaining.length > 0) {
     const nextTwoIndex = Math.floor(Math.random() * remaining.length);

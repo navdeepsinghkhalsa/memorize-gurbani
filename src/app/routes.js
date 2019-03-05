@@ -9,6 +9,7 @@ import Settings from '../components/Settings/Settings';
 import About from '../components/About/About';
 // Training
 import PauriOrder from '../components/Training/PauriOrder/PauriOrder';
+import LineOrder from '../components/Training/LineOrder/LineOrder';
 
 const routes = [
   {
@@ -50,6 +51,13 @@ const routes = [
     path: '/pauri-order/:bani',
     route: {
       component: PauriOrder,
+    },
+  },
+  {
+    id: 'line-order',
+    path: '/line-order/:bani',
+    route: {
+      component: LineOrder,
     },
   },
 ];

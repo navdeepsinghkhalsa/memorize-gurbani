@@ -29,6 +29,15 @@ const BaniName = ({ bani }) => (
           </Link>
         )
       }
+      {
+        supportedBanis.lineOrder[bani.token] && (
+          <Link to={`/line-order/${bani.token}`}>
+            <Button>
+              Line Order
+            </Button>
+          </Link>
+        )
+      }
     </CardActions>
   </Card>
 );
