@@ -5,3 +5,5 @@ export const supportedBanis = {
   lineOrder,
   sectionOrder,
 };
+
+export { default as lengths } from './baniSupport/lengths';

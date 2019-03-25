@@ -35,6 +35,7 @@ const PauriOrder = ({
   classes,
   fetchBani,
   match,
+  settings,
 }) => {
   const baniToken = match.params.bani;
   const { sectionLinesToShow } = supportedBanis.sectionOrder[baniToken];
@@ -42,7 +43,7 @@ const PauriOrder = ({
   const initialState = 0;
   const [correct, setCorrect] = useState(initialState);
   useEffect(() => {
-    if (!bani.gurbani) {
+    if (!bani.gurbani || !bani.schemaVer || bani.schemaVer < settings.schemaVer) {
       fetchBani(bani.ID);
     }
   });
@@ -53,7 +54,7 @@ const PauriOrder = ({
       requestAnimationFrame(() => window.scrollTo({ left: 0, top: $lastCorrectSection.offsetTop - 5, behavior: 'smooth' }));
     }
   });
-  const sections = bani.gurbani ? getSections(bani) : [];
+  const sections = bani.gurbani ? getSections(bani, bani.length || settings.baniLength) : [];
   const { correctArray, nextID, nextOptions } = bani.gurbani ? splitCorrect(sections, correct) : {};
 
   return (
@@ -98,10 +99,12 @@ PauriOrder.propTypes = {
   classes: PropTypes.shape({}).isRequired,
   fetchBani: PropTypes.func.isRequired,
   match: PropTypes.shape({}).isRequired,
+  settings: PropTypes.shape({}).isRequired,
 };
 
 const mapStateToProps = state => ({
   banis: state.banis,
+  settings: state.settings,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

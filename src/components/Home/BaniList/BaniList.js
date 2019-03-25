@@ -29,7 +29,13 @@ const BaniList = ({
     <div className={styles.banis}>
       {banis.map(bani => Object.keys(supportedBanis)
         .some(trainingType => supportedBanis[trainingType][bani.token])
-        && <BaniName key={bani.token} bani={bani} />)}
+        && (
+          <BaniName
+            key={bani.token}
+            bani={bani}
+          />
+        ))
+    }
     </div>
   );
 };

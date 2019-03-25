@@ -26,3 +26,12 @@ export const fetchBaniAction = baniID => async (dispatch) => {
   const gurbani = await response.json();
   dispatch(receiveBani(baniID, gurbani));
 };
+
+export const UPDATE_BANI_LENGTH_PREF = 'UPDATE_BANI_LENGTH_PREF';
+export const updateBaniLengthPrefAction = (baniID, length) => ({
+  type: UPDATE_BANI_LENGTH_PREF,
+  payload: {
+    baniID,
+    length,
+  },
+});
