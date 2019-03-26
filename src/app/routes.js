@@ -7,6 +7,7 @@ import AboutIcon from '@material-ui/icons/Info';
 import Home from '../components/Home/Home';
 import Settings from '../components/Settings/Settings';
 import About from '../components/About/About';
+import Changelog from '../components/About/Changelog';
 // Training
 import PauriOrder from '../components/Training/PauriOrder/PauriOrder';
 import LineOrder from '../components/Training/LineOrder/LineOrder';
@@ -44,6 +45,14 @@ const routes = [
     },
     route: {
       component: About,
+      exact: true,
+    },
+  },
+  {
+    id: 'changelog',
+    path: '/about/changelog',
+    route: {
+      component: Changelog,
     },
   },
   {
