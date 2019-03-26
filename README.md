@@ -31,3 +31,6 @@ The database used is provided by the BaniDB Alliance and is subject to the Khali
 
 ### Gurmukhi Fonts
 The fonts used are provided by Khalis Foundation and subject to multiple licenses. Please see the [GitHub repository](https://github.com/KhalisFoundation/gurmukhi-fonts).
+
+## Updates/Follow
+You can follow/subscribe to updates from Memorize Gurbani on Twitter ([@memorizegurbani](https://twitter.com/memorizegurbani)) or Telegram ([@memorizegurbani](https://telegram.me/memorizegurbani))
