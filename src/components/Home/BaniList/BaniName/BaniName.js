@@ -71,7 +71,7 @@ const BaniName = ({ bani, settings, updateBaniLengthPref }) => {
       <CardActions>
         {
           supportedBanis.sectionOrder[bani.token] && (
-            <Link to={`/pauri-order/${bani.token}`}>
+            <Link to={`/testing/pauri-order/${bani.token}`}>
               <Button>
                 Pauri Order
               </Button>

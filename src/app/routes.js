@@ -8,9 +8,9 @@ import Home from '../components/Home/Home';
 import Settings from '../components/Settings/Settings';
 import About from '../components/About/About';
 import Changelog from '../components/About/Changelog';
-// Training
-import PauriOrder from '../components/Training/PauriOrder/PauriOrder';
-import LineOrder from '../components/Training/LineOrder/LineOrder';
+// Testing
+import PauriOrderTest from '../components/Testing/PauriOrder/PauriOrder';
+import LineOrderTest from '../components/Testing/LineOrder/LineOrder';
 
 const routes = [
   {
@@ -56,17 +56,17 @@ const routes = [
     },
   },
   {
-    id: 'pauri-order',
-    path: '/pauri-order/:bani',
+    id: 'pauri-order-test',
+    path: '/testing/pauri-order/:bani',
     route: {
-      component: PauriOrder,
+      component: PauriOrderTest,
     },
   },
   {
-    id: 'line-order',
-    path: '/line-order/:bani',
+    id: 'line-order-test',
+    path: '/testing/line-order/:bani',
     route: {
-      component: LineOrder,
+      component: LineOrderTest,
     },
   },
 ];
