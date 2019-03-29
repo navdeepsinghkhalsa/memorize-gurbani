@@ -20,10 +20,16 @@ import { updateBaniLengthPrefAction } from '../../../../actions/BaniActions';
 // Styles
 import styles from './BaniName.css';
 
-const BaniName = ({ bani, settings, updateBaniLengthPref }) => {
+const BaniName = ({
+  bani,
+  settings,
+  testingMode,
+  updateBaniLengthPref,
+}) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const supportedLengths = lengths[bani.token];
+  const path = testingMode ? 'testing' : 'training';
 
   const handleLengthClick = (length) => {
     updateBaniLengthPref(bani.ID, length);
@@ -71,7 +77,7 @@ const BaniName = ({ bani, settings, updateBaniLengthPref }) => {
       <CardActions>
         {
           supportedBanis.sectionOrder[bani.token] && (
-            <Link to={`/testing/pauri-order/${bani.token}`}>
+            <Link to={`/${path}/pauri-order/${bani.token}`}>
               <Button>
                 Pauri Order
               </Button>
@@ -80,7 +86,7 @@ const BaniName = ({ bani, settings, updateBaniLengthPref }) => {
         }
         {
           supportedBanis.lineOrder[bani.token] && (
-            <Link to={`/line-order/${bani.token}`}>
+            <Link to={`/${path}/line-order/${bani.token}`}>
               <Button>
                 Line Order
               </Button>
@@ -94,11 +100,13 @@ const BaniName = ({ bani, settings, updateBaniLengthPref }) => {
 BaniName.propTypes = {
   bani: PropTypes.shape({}).isRequired,
   settings: PropTypes.shape({}).isRequired,
+  testingMode: PropTypes.bool.isRequired,
   updateBaniLengthPref: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
   settings: state.settings,
+  testingMode: state.testingMode,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
