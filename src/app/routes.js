@@ -11,6 +11,8 @@ import Changelog from '../components/About/Changelog';
 // Testing
 import PauriOrderTest from '../components/Testing/PauriOrder/PauriOrder';
 import LineOrderTest from '../components/Testing/LineOrder/LineOrder';
+// Training
+import PauriOrderTrain from '../components/Training/PauriOrder/PauriOrder';
 
 const routes = [
   {
@@ -55,6 +57,7 @@ const routes = [
       component: Changelog,
     },
   },
+  // TESTING ROUTES
   {
     id: 'pauri-order-test',
     path: '/testing/pauri-order/:bani',
@@ -67,6 +70,14 @@ const routes = [
     path: '/testing/line-order/:bani',
     route: {
       component: LineOrderTest,
+    },
+  },
+  // TRAINING ROUTES
+  {
+    id: 'pauri-order-train',
+    path: '/training/pauri-order/:bani',
+    route: {
+      component: PauriOrderTrain,
     },
   },
 ];
