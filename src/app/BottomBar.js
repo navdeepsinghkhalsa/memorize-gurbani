@@ -16,8 +16,10 @@ const styles = {
   },
 };
 
-const getPathValue = (props) => {
-  const { location: { pathname } } = props;
+const getPathValue = props => {
+  const {
+    location: { pathname },
+  } = props;
   return routes.findIndex(el => el.path === pathname) || 0;
 };
 
@@ -38,11 +40,7 @@ class SimpleBottomNavigation extends React.Component {
     const { value } = this.state;
 
     return (
-      <BottomNavigation
-        value={value}
-        showLabels
-        className={classes.root}
-      >
+      <BottomNavigation value={value} showLabels className={classes.root}>
         {routes
           .filter(item => 'nav' in item)
           .map(route => (

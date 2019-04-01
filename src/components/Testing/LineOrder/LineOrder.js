@@ -30,12 +30,7 @@ const styles = {
   },
 };
 
-const LineOrder = ({
-  banis,
-  classes,
-  fetchBani,
-  match,
-}) => {
+const LineOrder = ({ banis, classes, fetchBani, match }) => {
   const baniToken = match.params.bani;
   const bani = banis.find(oneBani => oneBani.token === baniToken);
   const { duplicates } = supportedBanis.lineOrder[baniToken];
@@ -50,15 +45,15 @@ const LineOrder = ({
     const $correctLines = document.querySelectorAll('.correctLine');
     if ($correctLines.length > 1) {
       const $lastcorrectLine = $correctLines[$correctLines.length - 1];
-      requestAnimationFrame(() => window.scrollTo({ left: 0, top: $lastcorrectLine.offsetTop - 5, behavior: 'smooth' }));
+      requestAnimationFrame(() =>
+        window.scrollTo({ left: 0, top: $lastcorrectLine.offsetTop - 5, behavior: 'smooth' }),
+      );
     }
   });
   const lines = bani.gurbani ? getLines(bani) : [];
-  const {
-    correctArray,
-    nextID,
-    nextOptions,
-  } = bani.gurbani ? splitCorrect(lines, correct, duplicates) : {};
+  const { correctArray, nextID, nextOptions } = bani.gurbani
+    ? splitCorrect(lines, correct, duplicates)
+    : {};
 
   return (
     <React.Fragment>
@@ -81,9 +76,15 @@ const LineOrder = ({
           <Grid container spacing={24}>
             {nextOptions.map(index => (
               <Grid key={`line${index}`} item xs={12} sm={4}>
-                <Paper onClick={() => { if (index === nextID) { setCorrect(nextID); } }} className={[classes.option, classes.sectionPaper].join(' ')}>
-                  {lines[index]}
-                  {' '}
+                <Paper
+                  onClick={() => {
+                    if (index === nextID) {
+                      setCorrect(nextID);
+                    }
+                  }}
+                  className={[classes.option, classes.sectionPaper].join(' ')}
+                >
+                  {lines[index]}{' '}
                 </Paper>
               </Grid>
             ))}
@@ -104,8 +105,15 @@ const mapStateToProps = state => ({
   banis: state.banis,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchBani: fetchBaniAction,
-}, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchBani: fetchBaniAction,
+    },
+    dispatch,
+  );
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(LineOrder));
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withStyles(styles)(LineOrder));

@@ -35,13 +35,7 @@ const styles = {
   },
 };
 
-const PauriOrder = ({
-  banis,
-  classes,
-  fetchBani,
-  match,
-  settings,
-}) => {
+const PauriOrder = ({ banis, classes, fetchBani, match, settings }) => {
   const baniToken = match.params.bani;
   const bani = banis.find(oneBani => oneBani.token === baniToken);
   const initialState = 0;
@@ -55,7 +49,13 @@ const PauriOrder = ({
     const $correctSections = document.querySelectorAll('.correctSection');
     if ($correctSections.length > 1) {
       const $lastCorrectSection = $correctSections[$correctSections.length - 1];
-      requestAnimationFrame(() => window.scrollTo({ left: 0, top: $lastCorrectSection.offsetTop - 5, behavior: 'smooth' }));
+      requestAnimationFrame(() =>
+        window.scrollTo({
+          left: 0,
+          top: $lastCorrectSection.offsetTop - 5,
+          behavior: 'smooth',
+        }),
+      );
     }
   });
   const sections = bani.gurbani ? getSections(bani, bani.length || settings.baniLength) : [];
@@ -74,10 +74,7 @@ const PauriOrder = ({
             {correctArray.map(sectionID => (
               <div key={`section${sectionID}`} className={`correctSection ${classes.section}`}>
                 {sections[sectionID].map((verse, index) => (
-                  <React.Fragment key={`line${index}`}>
-                    {verse}
-                    {' '}
-                  </React.Fragment>
+                  <React.Fragment key={`line${index}`}>{verse} </React.Fragment>
                 ))}
               </div>
             ))}
@@ -110,8 +107,15 @@ const mapStateToProps = state => ({
   settings: state.settings,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchBani: fetchBaniAction,
-}, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchBani: fetchBaniAction,
+    },
+    dispatch,
+  );
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(PauriOrder));
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withStyles(styles)(PauriOrder));

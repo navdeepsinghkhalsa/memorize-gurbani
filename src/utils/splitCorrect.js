@@ -1,4 +1,4 @@
-const shuffle = (a) => {
+const shuffle = a => {
   const b = [...a];
   for (let i = b.length - 1; i > 0; i -= 1) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -13,7 +13,7 @@ const splitCorrect = (sections, correct, avoid = {}) => {
   let nextID;
   const nextOptions = [];
   if (remaining.length > 0) {
-    ([nextID] = remaining.splice(0, 1));
+    [nextID] = remaining.splice(0, 1);
     nextID = parseInt(nextID, 10);
     nextOptions.push(nextID);
   }

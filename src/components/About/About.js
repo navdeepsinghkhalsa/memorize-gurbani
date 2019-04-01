@@ -12,12 +12,16 @@ const About = () => (
     <TitleBar text="About" />
     <Typography variant="body1">
       <p style={{ textAlign: 'center' }}>
-        <Link href="/about/changelog">
-          {`Changelog (${version})`}
-        </Link>
+        <Link href="/about/changelog">{`Changelog (${version})`}</Link>
       </p>
       {'This application is a work in progress. Follow progress on '}
-      <a href="https://github.com/navdeepsinghkhalsa/memorize-gurbani" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a
+        href="https://github.com/navdeepsinghkhalsa/memorize-gurbani"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
       <div dangerouslySetInnerHTML={{ __html: about }} />
     </Typography>
   </React.Fragment>

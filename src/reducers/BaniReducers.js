@@ -1,8 +1,4 @@
-import {
-  ADD_BANI,
-  UPDATE_BANI_LENGTH_PREF,
-  UPDATE_BANIS_LIST,
-} from '../actions/BaniActions';
+import { ADD_BANI, UPDATE_BANI_LENGTH_PREF, UPDATE_BANIS_LIST } from '../actions/BaniActions';
 
 export const banis = (state = [], { type, payload }) => {
   switch (type) {
@@ -10,7 +6,7 @@ export const banis = (state = [], { type, payload }) => {
       return payload.banis;
     case ADD_BANI:
       return [
-        ...state.map((bani) => {
+        ...state.map(bani => {
           if (payload.baniID === bani.ID) {
             return {
               ...bani,
@@ -23,7 +19,7 @@ export const banis = (state = [], { type, payload }) => {
       ];
     case UPDATE_BANI_LENGTH_PREF:
       return [
-        ...state.map((bani) => {
+        ...state.map(bani => {
           if (payload.baniID === bani.ID) {
             return {
               ...bani,

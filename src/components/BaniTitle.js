@@ -12,11 +12,10 @@ const styles = {
   },
 };
 
-const GurbaniTitle = ({
-  classes,
-  text,
-}) => (
-  <Typography variant="h3" className={`gurmukhi ${classes.root}`}>{text}</Typography>
+const GurbaniTitle = ({ classes, text }) => (
+  <Typography variant="h3" className={`gurmukhi ${classes.root}`}>
+    {text}
+  </Typography>
 );
 GurbaniTitle.propTypes = {
   classes: PropTypes.shape({}).isRequired,

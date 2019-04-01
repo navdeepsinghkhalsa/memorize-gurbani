@@ -20,26 +20,19 @@ import { updateBaniLengthPrefAction } from '../../../../actions/BaniActions';
 // Styles
 import styles from './BaniName.css';
 
-const BaniName = ({
-  bani,
-  settings,
-  testingMode,
-  updateBaniLengthPref,
-}) => {
+const BaniName = ({ bani, settings, testingMode, updateBaniLengthPref }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const supportedLengths = lengths[bani.token];
   const path = testingMode ? 'testing' : 'training';
 
-  const handleLengthClick = (length) => {
+  const handleLengthClick = length => {
     updateBaniLengthPref(bani.ID, length);
     setAnchorEl(null);
   };
 
   const action = supportedLengths ? (
-    <IconButton
-      onClick={e => setAnchorEl(e.currentTarget)}
-    >
+    <IconButton onClick={e => setAnchorEl(e.currentTarget)}>
       <MoreVertIcon />
     </IconButton>
   ) : null;
@@ -75,24 +68,16 @@ const BaniName = ({
         </Menu>
       )}
       <CardActions>
-        {
-          supportedBanis.sectionOrder[bani.token] && (
-            <Link to={`/${path}/pauri-order/${bani.token}`}>
-              <Button>
-                Pauri Order
-              </Button>
-            </Link>
-          )
-        }
-        {
-          supportedBanis.lineOrder[bani.token] && (
-            <Link to={`/${path}/line-order/${bani.token}`}>
-              <Button>
-                Line Order
-              </Button>
-            </Link>
-          )
-        }
+        {supportedBanis.sectionOrder[bani.token] && (
+          <Link to={`/${path}/pauri-order/${bani.token}`}>
+            <Button>Pauri Order</Button>
+          </Link>
+        )}
+        {supportedBanis.lineOrder[bani.token] && (
+          <Link to={`/${path}/line-order/${bani.token}`}>
+            <Button>Line Order</Button>
+          </Link>
+        )}
       </CardActions>
     </Card>
   );
@@ -109,8 +94,15 @@ const mapStateToProps = state => ({
   testingMode: state.testingMode,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  updateBaniLengthPref: updateBaniLengthPrefAction,
-}, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      updateBaniLengthPref: updateBaniLengthPrefAction,
+    },
+    dispatch,
+  );
 
-export default connect(mapStateToProps, mapDispatchToProps)(BaniName);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(BaniName);

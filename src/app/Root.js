@@ -8,7 +8,9 @@ import BottomBar from './BottomBar';
 const Root = () => (
   <Router>
     <Fragment>
-      {routes.map(route => <Route key={route.id} path={route.path} {...route.route} />)}
+      {routes.map(route => (
+        <Route key={route.id} path={route.path} {...route.route} />
+      ))}
       <BottomBar />
     </Fragment>
   </Router>

@@ -12,10 +12,7 @@ import styles from './ChooseMode.css';
 const ChooseMode = ({ testingMode, updateTestingMode }) => (
   <Typography className={styles.chooseMode} variant="body2">
     Training Mode
-    <Switch
-      onChange={e => updateTestingMode(e.target.checked)}
-      checked={testingMode}
-    />
+    <Switch onChange={e => updateTestingMode(e.target.checked)} checked={testingMode} />
     Testing Mode
   </Typography>
 );
@@ -24,12 +21,19 @@ ChooseMode.propTypes = {
   updateTestingMode: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  updateTestingMode: updateTestingModeAction,
-}, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      updateTestingMode: updateTestingModeAction,
+    },
+    dispatch,
+  );
 
 const mapStateToProps = state => ({
   testingMode: state.testingMode,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChooseMode);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ChooseMode);

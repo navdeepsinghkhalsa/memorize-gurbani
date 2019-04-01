@@ -37,12 +37,7 @@ const styles = {
   },
 };
 
-const LineOrder = ({
-  banis,
-  classes,
-  fetchBani,
-  match,
-}) => {
+const LineOrder = ({ banis, classes, fetchBani, match }) => {
   const baniToken = match.params.bani;
   const bani = banis.find(oneBani => oneBani.token === baniToken);
   const { duplicates } = supportedBanis.lineOrder[baniToken];
@@ -57,14 +52,13 @@ const LineOrder = ({
     const $correctLines = document.querySelectorAll('.correctLine');
     if ($correctLines.length > 1) {
       const $lastcorrectLine = $correctLines[$correctLines.length - 1];
-      requestAnimationFrame(() => window.scrollTo({ left: 0, top: $lastcorrectLine.offsetTop - 5, behavior: 'smooth' }));
+      requestAnimationFrame(() =>
+        window.scrollTo({ left: 0, top: $lastcorrectLine.offsetTop - 5, behavior: 'smooth' }),
+      );
     }
   });
   const lines = bani.gurbani ? getLines(bani) : [];
-  const {
-    correctArray,
-    nextID,
-  } = bani.gurbani ? splitCorrect(lines, correct, duplicates) : {};
+  const { correctArray, nextID } = bani.gurbani ? splitCorrect(lines, correct, duplicates) : {};
   const paperClasses = [classes.sectionPaper];
   if (correctArray && correctArray.length > 1 && nextID) {
     paperClasses.push(classes.withNextButton);
@@ -109,8 +103,15 @@ const mapStateToProps = state => ({
   banis: state.banis,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchBani: fetchBaniAction,
-}, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchBani: fetchBaniAction,
+    },
+    dispatch,
+  );
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(LineOrder));
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withStyles(styles)(LineOrder));

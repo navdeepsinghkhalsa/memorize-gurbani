@@ -6,7 +6,7 @@ const receiveBanisList = banis => ({
   },
 });
 
-export const fetchBanisListAction = () => async (dispatch) => {
+export const fetchBanisListAction = () => async dispatch => {
   const response = await fetch('https://api.banidb.com/v2/banis');
   const banis = await response.json();
   dispatch(receiveBanisList(banis));
@@ -21,7 +21,7 @@ const receiveBani = (baniID, gurbani) => ({
   },
 });
 
-export const fetchBaniAction = baniID => async (dispatch) => {
+export const fetchBaniAction = baniID => async dispatch => {
   const response = await fetch(`https://api.banidb.com/v2/banis/${baniID}`);
   const gurbani = await response.json();
   dispatch(receiveBani(baniID, gurbani));

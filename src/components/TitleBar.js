@@ -11,11 +11,10 @@ const styles = {
   },
 };
 
-const TitleBar = ({
-  classes,
-  text,
-}) => (
-  <Typography variant="h3" className={classes.root}>{text}</Typography>
+const TitleBar = ({ classes, text }) => (
+  <Typography variant="h3" className={classes.root}>
+    {text}
+  </Typography>
 );
 TitleBar.propTypes = {
   classes: PropTypes.shape({}).isRequired,

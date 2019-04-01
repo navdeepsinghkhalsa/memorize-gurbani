@@ -30,13 +30,7 @@ const styles = {
   },
 };
 
-const PauriOrder = ({
-  banis,
-  classes,
-  fetchBani,
-  match,
-  settings,
-}) => {
+const PauriOrder = ({ banis, classes, fetchBani, match, settings }) => {
   const baniToken = match.params.bani;
   const { sectionLinesToShow } = supportedBanis.sectionOrder[baniToken];
   const bani = banis.find(oneBani => oneBani.token === baniToken);
@@ -51,7 +45,9 @@ const PauriOrder = ({
     const $correctSections = document.querySelectorAll('.correctSection');
     if ($correctSections.length > 1) {
       const $lastCorrectSection = $correctSections[$correctSections.length - 1];
-      requestAnimationFrame(() => window.scrollTo({ left: 0, top: $lastCorrectSection.offsetTop - 5, behavior: 'smooth' }));
+      requestAnimationFrame(() =>
+        window.scrollTo({ left: 0, top: $lastCorrectSection.offsetTop - 5, behavior: 'smooth' }),
+      );
     }
   });
   const sections = bani.gurbani ? getSections(bani, bani.length || settings.baniLength) : [];
@@ -66,10 +62,7 @@ const PauriOrder = ({
             {correctArray.map(sectionID => (
               <div key={`section${sectionID}`} className={`correctSection ${classes.section}`}>
                 {sections[sectionID].map((verse, index) => (
-                  <React.Fragment key={`line${index}`}>
-                    {verse}
-                    {' '}
-                  </React.Fragment>
+                  <React.Fragment key={`line${index}`}>{verse} </React.Fragment>
                 ))}
               </div>
             ))}
@@ -82,9 +75,17 @@ const PauriOrder = ({
           <Grid container spacing={24}>
             {nextOptions.map(sectionID => (
               <Grid key={`section${sectionID}`} item xs={12} sm={4}>
-                <Paper onClick={() => { if (sectionID === nextID) { setCorrect(nextID); } }} className={[classes.option, classes.sectionPaper].join(' ')}>
-                  {sections[sectionID].filter((val, index) => index <= sectionLinesToShow - 1).join(' ')}
-                  {' '}
+                <Paper
+                  onClick={() => {
+                    if (sectionID === nextID) {
+                      setCorrect(nextID);
+                    }
+                  }}
+                  className={[classes.option, classes.sectionPaper].join(' ')}
+                >
+                  {sections[sectionID]
+                    .filter((val, index) => index <= sectionLinesToShow - 1)
+                    .join(' ')}{' '}
                 </Paper>
               </Grid>
             ))}
@@ -107,8 +108,15 @@ const mapStateToProps = state => ({
   settings: state.settings,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchBani: fetchBaniAction,
-}, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchBani: fetchBaniAction,
+    },
+    dispatch,
+  );
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(PauriOrder));
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withStyles(styles)(PauriOrder));

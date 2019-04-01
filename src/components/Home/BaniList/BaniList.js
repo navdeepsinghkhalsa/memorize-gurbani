@@ -15,10 +15,7 @@ import { fetchBanisListAction } from '../../../actions/BaniActions';
 // Styles
 import styles from './BaniList.css';
 
-const BaniList = ({
-  banis,
-  fetchBanisList,
-}) => {
+const BaniList = ({ banis, fetchBanisList }) => {
   useEffect(() => {
     if (banis.length < 1) {
       fetchBanisList();
@@ -27,15 +24,12 @@ const BaniList = ({
   // Only show those Banis that have support in at least one type of training
   return (
     <div className={styles.banis}>
-      {banis.map(bani => Object.keys(supportedBanis)
-        .some(trainingType => supportedBanis[trainingType][bani.token])
-        && (
-          <BaniName
-            key={bani.token}
-            bani={bani}
-          />
-        ))
-    }
+      {banis.map(
+        bani =>
+          Object.keys(supportedBanis).some(
+            trainingType => supportedBanis[trainingType][bani.token],
+          ) && <BaniName key={bani.token} bani={bani} />,
+      )}
     </div>
   );
 };
@@ -48,8 +42,15 @@ const mapStateToProps = state => ({
   banis: state.banis,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchBanisList: fetchBanisListAction,
-}, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchBanisList: fetchBanisListAction,
+    },
+    dispatch,
+  );
 
-export default connect(mapStateToProps, mapDispatchToProps)(BaniList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(BaniList);

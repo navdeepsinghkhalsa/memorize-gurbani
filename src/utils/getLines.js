@@ -1,8 +1,10 @@
-const getLines = (bani) => {
+const getLines = bani => {
   const lines = {};
-  bani.gurbani.verses.filter(verse => verse.mangalPosition === 'current' || verse.mangalPosition === null).forEach((verse, index) => {
-    lines[index] = verse.verse.verse.gurmukhi;
-  });
+  bani.gurbani.verses
+    .filter(verse => verse.mangalPosition === 'current' || verse.mangalPosition === null)
+    .forEach((verse, index) => {
+      lines[index] = verse.verse.verse.gurmukhi;
+    });
   return lines;
 };
 
