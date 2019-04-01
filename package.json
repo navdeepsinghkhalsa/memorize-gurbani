@@ -1,6 +1,6 @@
 {
   "name": "memorize-gurbani",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "An app to help memorize Gurbani step by step",
   "main": "index.js",
   "scripts": {
