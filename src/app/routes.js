@@ -13,6 +13,7 @@ import PauriOrderTest from '../components/Testing/PauriOrder/PauriOrder';
 import LineOrderTest from '../components/Testing/LineOrder/LineOrder';
 // Training
 import PauriOrderTrain from '../components/Training/PauriOrder/PauriOrder';
+import LineOrderTrain from '../components/Training/LineOrder/LineOrder';
 
 const routes = [
   {
@@ -78,6 +79,13 @@ const routes = [
     path: '/training/pauri-order/:bani',
     route: {
       component: PauriOrderTrain,
+    },
+  },
+  {
+    id: 'line-order-train',
+    path: '/training/line-order/:bani',
+    route: {
+      component: LineOrderTrain,
     },
   },
 ];
