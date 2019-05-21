@@ -78,6 +78,11 @@ const BaniName = ({ bani, settings, testingMode, updateBaniLengthPref }) => {
             <Button>Line Order</Button>
           </Link>
         )}
+        {path === 'training' && (
+          <Link to={`/${path}/matra/${bani.token}`}>
+            <Button>Matra</Button>
+          </Link>
+        )}
       </CardActions>
     </Card>
   );

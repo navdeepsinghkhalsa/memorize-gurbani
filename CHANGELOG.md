@@ -1,3 +1,8 @@
+### 1.3.0
+
+- Add Matra training module
+- Increase default font size
+
 ### 1.2.0
 
 - Add Training modules

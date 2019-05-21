@@ -3,9 +3,7 @@
   font-style: normal;
   font-weight: normal;
   src: url('./assets/fonts/GurbaniAkharTrue.eot');
-  src:
-    local('☺'),
-    url('./assets/fonts/GurbaniAkharTrue.eot?#iefix') format('embedded-opentype'),
+  src: local('☺'), url('./assets/fonts/GurbaniAkharTrue.eot?#iefix') format('embedded-opentype'),
     url('./assets/fonts/GurbaniAkharTrue.woff2') format('woff2'),
     url('./assets/fonts/GurbaniAkharTrue.woff') format('woff'),
     url('./assets/fonts/GurbaniAkharTrue.svg') format('svg'),
@@ -22,6 +20,7 @@ body {
 }
 
 body {
+  font-size: 150%;
   margin: 0;
   padding: 0;
 }
@@ -32,4 +31,10 @@ body {
 
 :global .gurmukhi {
   font-family: GurbaniAkharTrue, sans-serif !important;
+}
+
+:global .matra {
+  & span {
+    color: #ff4500; /* orangered */
+  }
 }

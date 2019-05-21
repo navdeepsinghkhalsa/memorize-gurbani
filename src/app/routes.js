@@ -11,9 +11,11 @@ import Changelog from '../components/About/Changelog';
 // Testing
 import PauriOrderTest from '../components/Testing/PauriOrder/PauriOrder';
 import LineOrderTest from '../components/Testing/LineOrder/LineOrder';
+import MatraTest from '../components/Testing/Matra/Matra';
 // Training
 import PauriOrderTrain from '../components/Training/PauriOrder/PauriOrder';
 import LineOrderTrain from '../components/Training/LineOrder/LineOrder';
+import MatraTrain from '../components/Training/Matra/Matra';
 
 const routes = [
   {
@@ -73,6 +75,13 @@ const routes = [
       component: LineOrderTest,
     },
   },
+  {
+    id: 'matra-test',
+    path: '/testing/matra/:bani',
+    route: {
+      component: MatraTest,
+    },
+  },
   // TRAINING ROUTES
   {
     id: 'pauri-order-train',
@@ -86,6 +95,13 @@ const routes = [
     path: '/training/line-order/:bani',
     route: {
       component: LineOrderTrain,
+    },
+  },
+  {
+    id: 'matra-train',
+    path: '/training/matra/:bani',
+    route: {
+      component: MatraTrain,
     },
   },
 ];
