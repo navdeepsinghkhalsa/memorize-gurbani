@@ -1,3 +1,8 @@
+### 1.3.1
+
+- Add ਰਹਰਾਸਿ ਸਾਹਿਬ
+- Fix Matra spacing
+
 ### 1.3.0
 
 - Add Matra training module

@@ -11,7 +11,7 @@ import { fetchBaniAction } from '../../../actions/BaniActions';
 
 const highlightVowels = string =>
   reactStringReplace(string, /(H|w|W|y|Y|u|ü|U|¨|i|I|o|O|N|ˆ|M|µ|`|~|¤|´)/g, match => {
-    return <span>{match}</span>;
+    return <i>{match}</i>;
   });
 
 const Matra = ({ banis, fetchBani, match, settings }) => {
@@ -27,9 +27,9 @@ const Matra = ({ banis, fetchBani, match, settings }) => {
       <BaniTitle text={bani.gurmukhi} />
       {bani.gurbani && (
         <div className="matra gurmukhi">
-          {bani.gurbani.verses.map(verse => {
-            return highlightVowels(verse.verse.verse.gurmukhi);
-          })}
+          {bani.gurbani.verses.map(verse => (
+            <span>{highlightVowels(verse.verse.verse.gurmukhi)} </span>
+          ))}
         </div>
       )}
     </React.Fragment>

@@ -34,7 +34,8 @@ body {
 }
 
 :global .matra {
-  & span {
+  & i {
     color: #ff4500; /* orangered */
+    font-style: normal;
   }
 }
