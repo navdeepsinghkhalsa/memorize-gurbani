@@ -28,7 +28,7 @@ const Matra = ({ banis, fetchBani, match, settings }) => {
       {bani.gurbani && (
         <div className="matra gurmukhi">
           {bani.gurbani.verses.map(verse => (
-            <span>{highlightVowels(verse.verse.verse.gurmukhi)} </span>
+            <>{highlightVowels(verse.verse.verse.gurmukhi)} </>
           ))}
         </div>
       )}
